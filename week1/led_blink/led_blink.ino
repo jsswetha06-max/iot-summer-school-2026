@@ -6,11 +6,16 @@ void setup() {
 }
 
 void loop() {
+
+  int sensorValue = analogRead(A0);
+
+  int blinkDelay = map(sensorValue, 0, 1023, 100, 1000);
+
   digitalWrite(13, HIGH);
-  delay(500);
+  delay(blinkDelay);
 
   digitalWrite(13, LOW);
-  delay(500);
+  delay(blinkDelay);
 
   blinkCount++;
 
