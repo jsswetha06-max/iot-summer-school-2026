@@ -1,3 +1,4 @@
+// Fixed potentiometer blink interval handling
 /*
  * Author: Swetha
  * Date: 05-07-2026
