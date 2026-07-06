@@ -14,20 +14,43 @@ void setup() {
 
 void loop() {
 
-  if (digitalRead(btnDo) == LOW)
+  bool b1 = digitalRead(btnDo) == LOW;
+  bool b2 = digitalRead(btnRe) == LOW;
+  bool b3 = digitalRead(btnMi) == LOW;
+  bool b4 = digitalRead(btnFa) == LOW;
+
+  int pressed = b1 + b2 + b3 + b4;
+
+  if (pressed >= 2) {
+
+    tone(buzzer, 392);
+
+  }
+  else if (b1) {
+
     tone(buzzer, 262);
 
-  else if (digitalRead(btnRe) == LOW)
+  }
+  else if (b2) {
+
     tone(buzzer, 294);
 
-  else if (digitalRead(btnMi) == LOW)
+  }
+  else if (b3) {
+
     tone(buzzer, 330);
 
-  else if (digitalRead(btnFa) == LOW)
+  }
+  else if (b4) {
+
     tone(buzzer, 349);
 
-  else
+  }
+  else {
+
     noTone(buzzer);
 
-  delay(20);   // debounce delay
+  }
+
+  delay(20);
 }
