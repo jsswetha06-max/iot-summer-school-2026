@@ -28,4 +28,6 @@ void loop() {
 
   else
     noTone(buzzer);
+
+  delay(20);   // debounce delay
 }
